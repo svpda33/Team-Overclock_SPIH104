@@ -19,7 +19,7 @@ if (fs.existsSync(envFilePath)) {
   });
 }
 
-const { initDb } = require('./db');
+const { initDb, get } = require('./db');
 const seed = require('./seed');
 
 const { router: authRouter } = require('./routes/auth');
@@ -34,18 +34,33 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Lazy DB Init middleware for Vercel serverless requests
-app.use(async (req, res, next) => {
-  try {
-    await initDb();
-  } catch (err) {
-    console.error('Lazy DB init error:', err.message);
-  }
-  next();
-});
-
 // Serve Static Frontend Files (index.html, script.js, style.css)
 app.use(express.static(path.join(__dirname, '..')));
+
+// Ensure Database Initialization on First Request (Vercel Serverless Ready)
+let isDbInitialized = false;
+let dbInitPromise = null;
+
+async function ensureDbReady() {
+  if (isDbInitialized) return;
+  if (!dbInitPromise) {
+    dbInitPromise = (async () => {
+      try {
+        await initDb();
+        await seed();
+        isDbInitialized = true;
+      } catch (err) {
+        console.error('❌ Database initialization error:', err);
+      }
+    })();
+  }
+  await dbInitPromise;
+}
+
+app.use(async (req, res, next) => {
+  await ensureDbReady();
+  next();
+});
 
 // API Routes
 app.use('/api/auth', authRouter);
@@ -58,8 +73,7 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     message: 'LearnAIQ Express Gemini LLM Backend operational',
-    environment: process.env.VERCEL ? 'vercel-production' : 'localhost-development',
-    timestamp: new Date().toISOString()
+    environment: process.env.VERCEL ? 'Vercel Serverless' : 'Local Node.js'
   });
 });
 
@@ -68,22 +82,24 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
-// Start Server locally if run directly
-if (require.main === module) {
-  async function startServer() {
-    try {
-      await initDb();
-      await seed();
+// Start Server for Local Execution
+async function startServer() {
+  try {
+    await ensureDbReady();
+    if (!process.env.VERCEL) {
       app.listen(PORT, () => {
         console.log(`====================================================`);
         console.log(`🚀 LearnAIQ Backend Server listening on http://localhost:${PORT}`);
-        console.log(`📊 SQLite Mode Enabled (Capacity: 1k users, 50k DB records)`);
+        console.log(`📊 SQLite WAL Mode Enabled (Capacity: 1k users, 50k DB records)`);
         console.log(`====================================================`);
       });
-    } catch (err) {
-      console.error('❌ Server startup error:', err);
     }
+  } catch (err) {
+    console.error('❌ Server startup error:', err);
   }
+}
+
+if (require.main === module || !process.env.VERCEL) {
   startServer();
 }
 

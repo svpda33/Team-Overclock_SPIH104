@@ -47,7 +47,6 @@ const CURRICULUM_DATA = {
       { id: 'c3_s3', title: { en: 'States of Matter', te: 'పదార్థాల స్థితులు' }, desc: { en: 'Solids, liquids, and gases — ice, water, and steam experiments.', te: 'ఘన, ద్రవ, వాయు స్థితులు — మంచు, నీరు మరియు ఆవిరి ప్రయోగాలు.' }, icon: '🧊' },
       { id: 'c3_s4', title: { en: 'Force and Motion', te: 'బలం మరియు చలనం' }, desc: { en: 'Push, pull, friction, gravity, and how objects speed up or stop.', te: 'నెట్టడం, లాగడం, ఘర్షణ, గురుత్వాకర్షణ మరియు వస్తువుల కదలిక.' }, icon: '🚀' }
     ]
-<<<<<<< HEAD
   },
   4: {
     Maths: [
@@ -76,8 +75,6 @@ const CURRICULUM_DATA = {
       { id: 'c5_s3', title: { en: 'Nervous & Circulatory Systems', te: 'నరాల & రక్తప్రసరణ వ్యవస్థలు' }, desc: { en: 'Brain, spinal cord, nerves, heart chambers, and blood flow.', te: 'మెదడు, వెన్నుపాము, నరాలు, గుండె గదులు మరియు రక్తప్రసరణ.' }, icon: '🧠' },
       { id: 'c5_s4', title: { en: 'Universe & Space Science', te: 'విశ్వం, నక్షత్రాలు & రోదసి విజ్ఞానం' }, desc: { en: 'Galaxies, constellations, satellites, and space exploration rockets.', te: 'గెలాక్సీలు, నక్షత్రరాశులు, ఉపగ్రహాలు మరియు రాకెట్లు.' }, icon: '🌌' }
     ]
-=======
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
   }
 };
 
@@ -186,7 +183,6 @@ const TRANSLATIONS = {
     pricing_link: "7-Day Free Trial",
     reviews_link: "4.7★ Student Reviews",
     footer_heart: "Built with ❤️ for every young learner in English & Telugu.",
-<<<<<<< HEAD
     tab_login: "Student Log In",
     tab_signup: "Sign Up (Free Trial)",
     modal_login_head: "Welcome Back!",
@@ -210,16 +206,6 @@ const TRANSLATIONS = {
     hl_step3_desc: "Interactive quizzes adjust to your child's pace with an encouraging tone and built-in safety guardian protection.",
     btn_launch_tutor_cta: "🚀 Log In or Start Free Trial to Launch AI Tutor",
     btn_back_home: "Back to Landing Page",
-=======
-    modal_login_title: "Student Registration",
-    modal_login_subtitle: "Start your 7-Day FREE Trial on LearnAIQ instantly!",
-    lbl_name: "Full Name",
-    lbl_username: "Username",
-    lbl_phone: "Phone Number",
-    lbl_password: "Password",
-    lbl_select_class: "Select Class",
-    btn_start_trial_submit: "Start 7-Day Free Trial Now",
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
     modal_review_title: "Write a Review",
     modal_review_subtitle: "Share your experience with LearnAIQ!",
     lbl_rev_name: "Your Name",
@@ -339,23 +325,17 @@ const TRANSLATIONS = {
     pricing_link: "7 రోజుల ఉచిత ట్రయల్",
     reviews_link: "4.7★ విద్యార్థుల సమీక్షలు",
     footer_heart: "ఇంగ్లీష్ & తెలుగు విద్యార్థుల కోసం ప్రేమతో రూపొందించబడింది ❤️.",
-<<<<<<< HEAD
     tab_login: "విద్యార్థి లాగిన్",
     tab_signup: "ఖాతా తెరవండి (Sign Up)",
     modal_login_head: "మళ్ళీ స్వాగతం!",
     modal_login_subhead: "మీ 3 వివరాలను నమోదు చేసి లాగిన్ అవ్వండి.",
     modal_signup_head: "కొత్త విద్యార్థి ఖాతా సృష్టించండి",
     modal_signup_subhead: "LearnAIQ లో ఉచిత 7 రోజుల ట్రయల్ ప్రారంభించండి!",
-=======
-    modal_login_title: "విద్యార్థి నమోదు (Registration)",
-    modal_login_subtitle: "LearnAIQ లో ఉచిత 7 రోజుల ట్రయల్ ప్రారంభించండి!",
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
     lbl_name: "పూర్తి పేరు",
     lbl_username: "వాడుకరి పేరు (Username)",
     lbl_phone: "ఫోన్ నంబర్",
     lbl_password: "పాస్‌వర్డ్",
     lbl_select_class: "తరగతిని ఎంచుకోండి",
-<<<<<<< HEAD
     btn_login_submit: "LearnAIQ కి లాగిన్ అవ్వండి",
     btn_start_trial_submit: "ఉచిత ట్రయల్ ప్రారంభించండి",
     how_learn_title: "💡 LearnAIQ AI ట్యూటర్‌తో విద్యార్థులు ఎలా నేర్చుకుంటారు",
@@ -368,9 +348,6 @@ const TRANSLATIONS = {
     hl_step3_desc: "విద్యార్థి వేగానికి తగినట్లుగా క్విజ్ లు మరియు సురక్షితమైన సంభాషణ వాతావరణం.",
     btn_launch_tutor_cta: "🚀 AI ట్యూటర్ ఉపయోగించడానికి లాగిన్ లేదా సైన్ అప్ చేయండి",
     btn_back_home: "ముఖ్య పుటకి వెళ్ళండి",
-=======
-    btn_start_trial_submit: "ఉచిత ట్రయల్ ప్రారంభించండి",
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
     modal_review_title: "సమీక్ష రాయండి",
     modal_review_subtitle: "LearnAIQ తో మీ అనుభవాన్ని పంచుకోండి!",
     lbl_rev_name: "మీ పేరు",
@@ -423,18 +400,14 @@ let state = {
   language: 'en',
   voiceEnabled: true,
   userProfile: null,
-<<<<<<< HEAD
   completedChapters: [],
   studentProgress: [],
   skillScore: 25,
   difficulty: 'BEGINNER',
-=======
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
   currentSlideIndex: 0,
   slideshowTimer: null
 };
 
-<<<<<<< HEAD
 // --- 4.1 API CLIENT INTEGRATION ---
 const API_BASE = (typeof window !== 'undefined' && window.location.protocol.startsWith('http'))
   ? (window.location.origin + '/api')
@@ -506,16 +479,6 @@ async function loadCurriculumFromApi() {
   }
 }
 
-=======
-// --- 5. INITIALIZATION ON DOM LOADED ---
-document.addEventListener('DOMContentLoaded', () => {
-  initEventListeners();
-  renderChapters();
-  updateHeaderTags();
-  startBackgroundSlideshow();
-});
-
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
 function initEventListeners() {
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
@@ -533,7 +496,6 @@ function initEventListeners() {
   }
 }
 
-<<<<<<< HEAD
 // --- Dynamic Navigation & ScrollSpy ---
 function initNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
@@ -609,8 +571,6 @@ function initNavigation() {
   updateActiveOnScroll();
 }
 
-=======
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
 // --- 6. BACKGROUND SLIDESHOW ENGINE (nLearn Style) ---
 function startBackgroundSlideshow() {
   if (state.slideshowTimer) clearInterval(state.slideshowTimer);
@@ -719,7 +679,6 @@ function renderChapters() {
     card.className = 'chapter-card';
     card.onclick = () => startChapterSession(chap);
 
-<<<<<<< HEAD
     const isCompleted = state.completedChapters.includes(chap.id);
     const badgeText = isCompleted ? `<span class="completed-chapter-tag" style="background:#D1FAE5; color:#065F46; font-size:0.75rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:999px; margin-left:0.5rem;">✓ Completed</span>` : '';
 
@@ -734,16 +693,6 @@ function renderChapters() {
           ${badgeText}
         </div>
         <h3 class="chapter-title" style="margin-top:0.4rem;">${chap.icon} ${titleText}</h3>
-=======
-    const titleText = typeof chap.title === 'object' ? (chap.title[lang] || chap.title['en']) : chap.title;
-    const descText = typeof chap.desc === 'object' ? (chap.desc[lang] || chap.desc['en']) : chap.desc;
-    const btnLabel = lang === 'te' ? 'నేర్చుకోవడం ప్రారంభించండి' : 'Start Learning';
-
-    card.innerHTML = `
-      <div>
-        <div class="chapter-num">Chapter 0${idx + 1}</div>
-        <h3 class="chapter-title">${chap.icon} ${titleText}</h3>
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
         <p class="chapter-desc">${descText}</p>
       </div>
       <div class="chapter-action-btn">
@@ -756,7 +705,6 @@ function renderChapters() {
 }
 
 function startChapterSession(chapter) {
-<<<<<<< HEAD
   const token = localStorage.getItem('learnaiq_token');
   if (!token && !state.userProfile) {
     state.pendingChapterSession = chapter;
@@ -767,20 +715,11 @@ function startChapterSession(chapter) {
     return;
   }
 
-=======
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
   state.currentChapterId = chapter.id;
   const lang = state.language;
   const titleText = typeof chapter.title === 'object' ? (chapter.title[lang] || chapter.title['en']) : chapter.title;
 
-<<<<<<< HEAD
   showAiTutorAppPage();
-=======
-  const tutorSection = document.getElementById('ai-tutor');
-  if (tutorSection) {
-    tutorSection.scrollIntoView({ behavior: 'smooth' });
-  }
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
 
   const chatHeading = document.getElementById('chatSubjectHeading');
   if (chatHeading) {
@@ -792,7 +731,6 @@ function startChapterSession(chapter) {
     : `Great choice! We are now exploring **${titleText}**. Ask me any question or click a quick prompt below!`;
 
   addAiChatMessage(welcomeMsg);
-<<<<<<< HEAD
   updateProgressUI();
 }
 
@@ -846,34 +784,6 @@ async function sendQuickPrompt(actionType) {
 }
 
 async function sendCustomMessage() {
-=======
-}
-
-// --- 10. AI TUTOR CHAT ENGINE ---
-function sendQuickPrompt(actionType) {
-  let userText = actionType;
-  const lang = state.language;
-
-  if (actionType === 'Explain Simply') userText = lang === 'te' ? 'దీన్ని సులభంగా వివరిస్తారా?' : 'Can you explain this simply?';
-  if (actionType === 'Give an Example') userText = lang === 'te' ? 'ఒక ఉదాహరణ ఇవ్వగలరా?' : 'Can you give me a real-life example?';
-  if (actionType === 'Practice') userText = lang === 'te' ? 'ఒక చిన్న ప్రాక్టీస్ ప్రశ్న ఇవ్వండి!' : 'Give me a quick practice question!';
-
-  addUserChatMessage(userText);
-
-  setTimeout(() => {
-    let key = 'default';
-    if (actionType === 'What is a fraction?') key = 'fraction';
-    else if (actionType === 'Explain Simply') key = 'fraction_simple';
-    else if (actionType === 'Give an Example') key = 'fraction_example';
-    else if (actionType === 'Practice') key = 'fraction_practice';
-
-    const reply = TUTOR_RESPONSES[lang][key] || TUTOR_RESPONSES[lang]['default'];
-    addAiChatMessage(reply);
-  }, 600);
-}
-
-function sendCustomMessage() {
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
   const input = document.getElementById('chatInputField');
   if (!input || !input.value.trim()) return;
 
@@ -881,7 +791,6 @@ function sendCustomMessage() {
   addUserChatMessage(userQuery);
   input.value = '';
 
-<<<<<<< HEAD
   const thinkingMsgEl = addAiChatMessage('🤖 *LearnAIQ Tutor is thinking...*');
 
   // Call Express Backend Q&A Endpoint
@@ -921,34 +830,6 @@ function updateAdaptiveBadge(paceLabel) {
     const pace = paceLabel || (state.difficulty === 'BEGINNER' ? 'Supportive' : state.difficulty === 'ADVANCED' ? 'Challenge' : 'Reinforcement');
     badgeEl.textContent = `✨ Adaptive Pace: ${pace} (${state.difficulty})`;
   }
-=======
-  const lowerQuery = userQuery.toLowerCase();
-  const distressKeywords = ['scared', 'sad', 'crying', 'lonely', 'afraid', 'upset', 'సంతోషం లేదు', 'భయం'];
-  const isDistress = distressKeywords.some(k => lowerQuery.includes(k));
-
-  setTimeout(() => {
-    const lang = state.language;
-    let reply = '';
-
-    if (isDistress) {
-      reply = TUTOR_RESPONSES[lang]['safety'];
-    } else if (lowerQuery.includes('fraction') || lowerQuery.includes('భిన్నం')) {
-      reply = TUTOR_RESPONSES[lang]['fraction'];
-    } else if (lowerQuery.includes('add') || lowerQuery.includes('కూడిక')) {
-      reply = TUTOR_RESPONSES[lang]['addition'];
-    } else if (lowerQuery.includes('plant') || lowerQuery.includes('మొక్క')) {
-      reply = TUTOR_RESPONSES[lang]['plants'];
-    } else if (lowerQuery.includes('body') || lowerQuery.includes('శరీరం')) {
-      reply = TUTOR_RESPONSES[lang]['body'];
-    } else {
-      reply = lang === 'te' 
-        ? `"${userQuery}" గురించి మంచి ప్రశ్న! బొమ్మలు మరియు ఉదాహరణలతో సులభంగా నేర్చుకుందాం! 🌟`
-        : `Wonderful question about "${userQuery}"! Let's break it into visual steps together! 🌟`;
-    }
-
-    addAiChatMessage(reply);
-  }, 700);
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
 }
 
 function handleKeyPress(e) {
@@ -1055,7 +936,6 @@ function triggerVoiceInput() {
   };
 }
 
-<<<<<<< HEAD
 // --- 11. MODAL DIALOG HANDLERS (STUDENT LOGIN, SIGNUP & REVIEWS) ---
 function switchAuthTab(tabName) {
   const loginTab = document.getElementById('tabBtnLogin');
@@ -1083,10 +963,6 @@ function openLoginModal(mode = 'login', preselectClass = null) {
   }
   switchAuthTab(mode || 'login');
 
-=======
-// --- 11. MODAL DIALOG HANDLERS (STUDENT LOGIN & REVIEWS) ---
-function openLoginModal(preselectClass) {
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
   const modal = document.getElementById('loginModal');
   if (modal) modal.classList.add('active');
   if (preselectClass) {
@@ -1100,7 +976,6 @@ function closeLoginModal() {
   if (modal) modal.classList.remove('active');
 }
 
-<<<<<<< HEAD
 // 3-field Login Handler (Username, Mobile Number, Password)
 async function handleLoginSubmit(e) {
   e.preventDefault();
@@ -1483,20 +1358,6 @@ async function loadUserChatHistory() {
       appendChatMessage('user', item.question);
       appendChatMessage('ai', item.answer);
     });
-=======
-function handleLoginSubmit(e) {
-  e.preventDefault();
-  const name = document.getElementById('regName').value;
-  const username = document.getElementById('regUsername').value;
-  const selectedClass = document.getElementById('regClassSelect').value;
-
-  state.userProfile = { name, username, class: selectedClass };
-
-  closeLoginModal();
-  alert(`🎉 Welcome to LearnAIQ, ${name}! Your 7-Day FREE Trial for Class ${selectedClass} is now active!`);
-  if (parseInt(selectedClass) <= 3) {
-    selectClass(parseInt(selectedClass));
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
   }
 }
 
@@ -1510,7 +1371,6 @@ function closeReviewModal() {
   if (modal) modal.classList.remove('active');
 }
 
-<<<<<<< HEAD
 async function handleReviewSubmit(e) {
   e.preventDefault();
   const name = document.getElementById('revAuthorName').value;
@@ -1522,12 +1382,6 @@ async function handleReviewSubmit(e) {
     stars,
     comment
   });
-=======
-function handleReviewSubmit(e) {
-  e.preventDefault();
-  const name = document.getElementById('revAuthorName').value;
-  const stars = document.getElementById('revStars').value;
->>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
 
   closeReviewModal();
   alert(`🌟 Thank you ${name}! Your ${stars}-star review has been posted successfully!`);

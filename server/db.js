@@ -1,22 +1,18 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
-const os = require('os');
 const fs = require('fs');
 
-// Handle Vercel Serverless environment vs Localhost environment
-const isVercel = Boolean(process.env.VERCEL) || process.env.NODE_ENV === 'production';
+const isVercel = Boolean(process.env.VERCEL);
 const DB_PATH = isVercel
-  ? path.join(os.tmpdir(), 'learnaiq.db')
+  ? path.join('/tmp', 'learnaiq.db')
   : path.join(__dirname, '..', 'learnaiq.db');
-
-let isInitialized = false;
 
 // Connect to SQLite Database
 const db = new sqlite3.Database(DB_PATH, (err) => {
   if (err) {
     console.error('❌ Database connection error:', err.message);
   } else {
-    console.log('✅ Connected to SQLite database at:', DB_PATH);
+    console.log('✅ Connected to SQLite database:', DB_PATH);
   }
 });
 
@@ -50,16 +46,11 @@ const get = (sql, params = []) => {
 
 // Initialize Database Schema & Performance Tuning
 const initDb = async () => {
-  if (isInitialized) return;
   try {
-    // Enable journal mode (WAL for local, DELETE for serverless tmp)
-    if (!isVercel) {
-      await run(`PRAGMA journal_mode = WAL;`).catch(() => {});
-    } else {
-      await run(`PRAGMA journal_mode = DELETE;`).catch(() => {});
-    }
-    await run(`PRAGMA synchronous = NORMAL;`).catch(() => {});
-    await run(`PRAGMA foreign_keys = ON;`).catch(() => {});
+    // Enable WAL (Write-Ahead Logging) mode for 100+ concurrent user performance
+    await run(`PRAGMA journal_mode = WAL;`);
+    await run(`PRAGMA synchronous = NORMAL;`);
+    await run(`PRAGMA foreign_keys = ON;`);
 
     // 1. Users Table
     await run(`
@@ -75,7 +66,7 @@ const initDb = async () => {
       )
     `);
 
-    // 2. Chat History Table
+    // 2. Chat History Table (Target 50,000+ records capacity)
     await run(`
       CREATE TABLE IF NOT EXISTS chat_history (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -104,7 +95,7 @@ const initDb = async () => {
       )
     `);
 
-    // 4. Curriculum Table
+    // 4. Curriculum Database Table
     await run(`
       CREATE TABLE IF NOT EXISTS curriculum (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -136,13 +127,12 @@ const initDb = async () => {
       )
     `);
 
-    // 6. Indexes
-    await run(`CREATE INDEX IF NOT EXISTS idx_users_username ON users (username);`).catch(() => {});
-    await run(`CREATE INDEX IF NOT EXISTS idx_chat_history_user ON chat_history (user_id, created_at DESC);`).catch(() => {});
-    await run(`CREATE INDEX IF NOT EXISTS idx_chat_history_chapter ON chat_history (chapter_id);`).catch(() => {});
-    await run(`CREATE INDEX IF NOT EXISTS idx_student_progress_user ON student_progress (user_id, subject);`).catch(() => {});
+    // 6. Indexes for fast query lookup
+    await run(`CREATE INDEX IF NOT EXISTS idx_users_username ON users (username);`);
+    await run(`CREATE INDEX IF NOT EXISTS idx_chat_history_user ON chat_history (user_id, created_at DESC);`);
+    await run(`CREATE INDEX IF NOT EXISTS idx_chat_history_chapter ON chat_history (chapter_id);`);
+    await run(`CREATE INDEX IF NOT EXISTS idx_student_progress_user ON student_progress (user_id, subject);`);
 
-    isInitialized = true;
     console.log('✅ Database schemas and performance indexes initialized.');
   } catch (error) {
     console.error('❌ Failed to initialize database schema:', error);

@@ -7,6 +7,9 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 
+# Vercel deployment folder
+.vercel/
+
 # Database & System files
 learnaiq.db
 learnaiq.db-journal
@@ -14,7 +17,3 @@ learnaiq.db-wal
 learnaiq.db-shm
 .DS_Store
 Thumbs.db
-
-# Vercel Deployment Artifacts
-.vercel/
-

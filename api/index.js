@@ -1,6 +1,6 @@
 /**
  * Vercel Serverless Function Entry Point
- * Routes incoming Vercel /api/* HTTP requests to Express app.
+ * Wraps Express application for Vercel deployment.
  */
 
 const app = require('../server/index');
