@@ -88,7 +88,10 @@ button { font-family: var(--font-body); cursor: pointer; border: none; outline: 
 
 .container { width: 90%; max-width: 1240px; margin: 0 auto; padding: 0 1rem; }
 .section-spacer { padding: 5rem 0; }
+<<<<<<< HEAD
 section[id] { scroll-margin-top: 80px; }
+=======
+>>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
 
 .section-header { text-align: center; max-width: 720px; margin: 0 auto 3.5rem auto; }
 .section-tag {
@@ -456,6 +459,7 @@ input:checked + .slider:before { transform: translateX(20px); }
 .ai-msg .msg-avatar { background: var(--primary-gradient); color: #FFFFFF; }
 
 .msg-bubble-content { padding: 1.1rem 1.3rem; border-radius: 20px; font-size: 0.95rem; line-height: 1.6; }
+<<<<<<< HEAD
 .user-msg .msg-bubble-content { background: var(--primary-gradient); color: #FFFFFF; border-bottom-right-radius: 4px; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25); }
 .ai-msg .msg-bubble-content { background: #FFFFFF; border: 1.5px solid #E2E8F0; border-left: 4px solid var(--primary); color: #0F172A; border-bottom-left-radius: 4px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06); font-weight: 500; }
 .ai-msg .msg-bubble-content strong,
@@ -487,6 +491,14 @@ input:checked + .slider:before { transform: translateX(20px); }
 .btn-restart-lesson:hover { background: #E2E8F0; color: #0F172A; }
 .btn-complete-lesson { background: linear-gradient(135deg, #10B981, #059669); color: #FFFFFF; border: none; font-weight: 700; transition: var(--transition); }
 .btn-complete-lesson:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); }
+=======
+.user-msg .msg-bubble-content { background: var(--primary); color: #FFFFFF; border-bottom-right-radius: 4px; }
+.ai-msg .msg-bubble-content { background: #F8FAFC; border: 1px solid var(--border-light); color: var(--text-main); border-bottom-left-radius: 4px; box-shadow: var(--shadow-sm); }
+
+.chat-audio-btn { margin-top: 0.6rem; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.75rem; background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--radius-full); font-size: 0.775rem; font-weight: 700; color: var(--secondary); cursor: pointer; transition: var(--transition); }
+.chat-input-bar { padding: 1.25rem 1.75rem; border-top: 1px solid var(--border-light); background: #FAFAFA; display: flex; align-items: center; gap: 0.75rem; }
+.chat-input-field { flex-grow: 1; padding: 0.85rem 1.25rem; background: #FFFFFF; border: 1.5px solid var(--border-light); border-radius: var(--radius-full); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: var(--transition); }
+>>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
 
 /* ==========================================================================
    7. PRICING SECTION
@@ -545,6 +557,7 @@ input:checked + .slider:before { transform: translateX(20px); }
 
 @keyframes modalFadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
+<<<<<<< HEAD
 /* Auth Modal Tabs Styling */
 .auth-modal-tabs { display: flex; gap: 0.5rem; background: #F1F5F9; padding: 4px; border-radius: var(--radius-sm); margin-bottom: 1.25rem; }
 .auth-tab-btn { flex: 1; padding: 0.6rem 0.8rem; border: none; background: transparent; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; color: var(--text-muted); border-radius: calc(var(--radius-sm) - 2px); cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
@@ -591,6 +604,8 @@ input:checked + .slider:before { transform: translateX(20px); }
 .full-web-wrapper { grid-template-columns: 300px 1fr; }
 .full-web-chat { min-height: 520px; }
 
+=======
+>>>>>>> e18d72c7c1d8a42423198f8c8019b348b7a62aba
 /* ==========================================================================
    10. FOOTER
    ========================================================================== */
