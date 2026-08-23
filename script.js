@@ -409,8 +409,8 @@ let state = {
 };
 
 // --- 4.1 API CLIENT INTEGRATION ---
-const API_BASE = (typeof window !== 'undefined' && window.location.protocol.startsWith('http'))
-  ? (window.location.origin + '/api')
+const API_BASE = (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1')
+  ? 'https://team-overclockspih104-production.up.railway.app/api'
   : 'http://localhost:5000/api';
 
 async function apiFetch(endpoint, method = 'GET', data = null) {
@@ -778,8 +778,8 @@ async function sendQuickPrompt(actionType) {
     updateAdaptiveBadge(apiRes.adaptivePace);
   } else {
     addAiChatMessage(lang === 'te' 
-      ? 'మన్నించండి! సర్వర్ కనెక్షన్ లో సమస్య వచ్చింది. దయచేసి http://localhost:5000 సర్వర్ నడుస్తుందో లేదో సరిచూసుకోండి! 🌟' 
-      : "Oops! I'm having trouble connecting right now. Please check if the LearnAIQ backend server is running on http://localhost:5000! 🌟");
+      ? 'మన్నించండి! సర్వర్ కనెక్షన్ లో సమస్య వచ్చింది. దయచేసి నెట్‌వర్క్ కనెక్షన్ సరిచూసుకోండి! 🌟' 
+      : "Oops! I'm having trouble connecting to the LearnAIQ AI server right now. Please check your internet connection and try again! 🌟");
   }
 }
 
@@ -819,8 +819,8 @@ async function sendCustomMessage() {
     updateAdaptiveBadge(apiRes.adaptivePace);
   } else {
     addAiChatMessage(state.language === 'te' 
-      ? 'మన్నించండి! సర్వర్ కనెక్షన్ లో సమస్య వచ్చింది. దయచేసి http://localhost:5000 సర్వర్ నడుస్తుందో లేదో సరిచూసుకోండి! 🌟' 
-      : "Oops! I'm having trouble connecting right now. Please check if the LearnAIQ backend server is running on http://localhost:5000! 🌟");
+      ? 'మన్నించండి! సర్వర్ కనెక్షన్ లో సమస్య వచ్చింది. దయచేసి నెట్‌వర్క్ కనెక్షన్ సరిచూసుకోండి! 🌟' 
+      : "Oops! I'm having trouble connecting to the LearnAIQ AI server right now. Please check your internet connection and try again! 🌟");
   }
 }
 
@@ -1137,7 +1137,7 @@ async function restartCurrentLesson() {
   const token = localStorage.getItem('learnaiq_token');
   if (token) {
     try {
-      await fetch('/api/tutor/restart-lesson', {
+      await fetch(`${API_BASE}/tutor/restart-lesson`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1168,7 +1168,7 @@ async function markLessonCompleted() {
   if (!token) return;
 
   try {
-    const res = await fetch('/api/tutor/complete-lesson', {
+    const res = await fetch(`${API_BASE}/tutor/complete-lesson`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1199,7 +1199,7 @@ async function loadStudentProgress() {
   if (!token) return;
 
   try {
-    const res = await fetch('/api/tutor/progress', {
+    const res = await fetch(`${API_BASE}/tutor/progress`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     if (res.ok) {
