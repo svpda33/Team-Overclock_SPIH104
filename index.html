@@ -10,6 +10,8 @@
 </head>
 <body>
 
+  <!-- MAIN LANDING PAGE VIEW (CONTAINING MARKETING SECTIONS) -->
+  <div id="mainLandingView">
   <!-- ==========================================
        1. NAVIGATION BAR
        ========================================== -->
@@ -26,7 +28,7 @@
         <li><a href="#home" class="nav-link active" data-i18n="nav_home">Home</a></li>
         <li><a href="#classes" class="nav-link" data-i18n="nav_classes">Classes</a></li>
         <li><a href="#subjects" class="nav-link" data-i18n="nav_subjects">Subjects</a></li>
-        <li><a href="#ai-tutor" class="nav-link" data-i18n="nav_tutor">AI Tutor</a></li>
+        <li><a href="#ai-tutor" class="nav-link" onclick="navigateToAiTutor(event)" data-i18n="nav_tutor">AI Tutor</a></li>
         <li><a href="#pricing" class="nav-link" data-i18n="nav_pricing">Pricing</a></li>
         <li><a href="#reviews" class="nav-link" data-i18n="nav_reviews">Reviews</a></li>
       </ul>
@@ -41,8 +43,8 @@
           </select>
         </div>
 
-        <button class="btn btn-secondary btn-sm" onclick="openLoginModal()" data-i18n="btn_login">Student Login</button>
-        <button class="btn btn-amber btn-sm" onclick="openLoginModal()" data-i18n="btn_free_trial_top">Start Free Trial</button>
+        <button class="btn btn-secondary btn-sm" id="navLoginBtn" onclick="openLoginModal('login')" data-i18n="btn_login">Student Login</button>
+        <button class="btn btn-amber btn-sm" id="navSignupBtn" onclick="openLoginModal('signup')" data-i18n="btn_free_trial_top">Start Free Trial</button>
 
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -374,110 +376,7 @@
     </div>
   </section>
 
-  <!-- ==========================================
-       6. AI TUTOR INTERFACE SECTION
-       ========================================== -->
-  <section class="section-spacer" id="ai-tutor">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag" data-i18n="tutor_tag">Interactive Preview</div>
-        <h2 class="section-title" data-i18n="tutor_title">Meet Your AI Tutor</h2>
-        <p class="section-subtitle" data-i18n="tutor_subtitle">Ask questions, learn step-by-step, and understand difficult concepts with simple explanations.</p>
-      </div>
 
-      <div class="tutor-section-wrapper">
-        <div class="tutor-control-panel">
-          <div class="tutor-profile">
-            <div class="tutor-avatar-big">🤖</div>
-            <div class="tutor-info-box">
-              <h3>LearnAIQ Buddy</h3>
-              <p data-i18n="tutor_active_status">🟢 Active &amp; Ready</p>
-            </div>
-          </div>
-
-          <div class="panel-block">
-            <h5 data-i18n="quick_prompts_heading">Quick Prompts</h5>
-            <div class="quick-action-buttons">
-              <button class="quick-btn" onclick="sendQuickPrompt('What is a fraction?')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span data-i18n="btn_ask_q">Ask a Question</span>
-              </button>
-              <button class="quick-btn" onclick="sendQuickPrompt('Explain Simply')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                <span data-i18n="btn_exp_simple">Explain Simply</span>
-              </button>
-              <button class="quick-btn" onclick="sendQuickPrompt('Give an Example')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-                <span data-i18n="btn_give_ex">Give an Example</span>
-              </button>
-              <button class="quick-btn" onclick="sendQuickPrompt('Practice')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                <span data-i18n="btn_practice">Practice</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="tutor-features-toggle">
-            <div class="toggle-item">
-              <span data-i18n="read_aloud_toggle">Read Aloud (Voice)</span>
-              <label class="switch">
-                <input type="checkbox" id="voiceToggle" checked>
-                <span class="slider"></span>
-              </label>
-            </div>
-            <div class="toggle-item">
-              <span data-i18n="encouraging_toggle">Encouraging Tone</span>
-              <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
-            </div>
-            <div class="toggle-item">
-              <span data-i18n="guardian_toggle">Safety Guardian</span>
-              <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
-            </div>
-          </div>
-        </div>
-
-        <div class="tutor-chat-area">
-          <div class="chat-header-bar">
-            <div><strong id="chatSubjectHeading">Class 3 — Fractions (Maths)</strong></div>
-            <div class="active-context-badge" data-i18n="adaptive_pace_badge">✨ Adaptive Pace: Balanced</div>
-          </div>
-
-          <div class="chat-messages-container" id="chatMessages">
-            <div class="msg-row ai-msg">
-              <div class="msg-avatar">🤖</div>
-              <div>
-                <div class="msg-bubble-content" data-i18n="tutor_welcome_msg">
-                  Hi there! 👋 I'm your LearnAIQ Tutor. What would you like to explore today? You can ask me anything about <strong>Fractions</strong> or pick a quick question below!
-                </div>
-                <button class="chat-audio-btn" onclick="speakCurrentMsg(this)">🔊 Listen</button>
-              </div>
-            </div>
-
-            <div class="msg-row user-msg">
-              <div class="msg-avatar">👦</div>
-              <div class="msg-bubble-content" data-i18n="hero_user_msg">"What is a fraction?"</div>
-            </div>
-
-            <div class="msg-row ai-msg">
-              <div class="msg-avatar">🤖</div>
-              <div>
-                <div class="msg-bubble-content" data-i18n="hero_ai_msg">
-                  A <strong>fraction</strong> shows a part of a whole. For example, if a pizza is divided into 4 equal pieces and you take 1 piece, you have <strong>1/4</strong> of the pizza! 🍕
-                </div>
-                <button class="chat-audio-btn" onclick="speakCurrentMsg(this)">🔊 Listen</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="chat-input-bar">
-            <button class="btn btn-icon mic-btn" title="Voice Input (Speech-to-Text)" onclick="triggerVoiceInput()">🎤</button>
-            <input type="text" id="chatInputField" class="chat-input-field" placeholder="Ask your AI tutor anything..." onkeypress="handleKeyPress(event)">
-            <button class="btn btn-primary btn-sm" onclick="sendCustomMessage()" data-i18n="btn_send">Send</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ==========================================
        7. PRICING & INCREMENTAL CLASS STRUCTURE
@@ -666,7 +565,7 @@
             <li><a href="#home" data-i18n="nav_home">Home</a></li>
             <li><a href="#classes" data-i18n="nav_classes">Classes</a></li>
             <li><a href="#subjects" data-i18n="nav_subjects">Subjects</a></li>
-            <li><a href="#ai-tutor" data-i18n="nav_tutor">AI Tutor</a></li>
+            <li><a href="#ai-tutor" onclick="navigateToAiTutor(event)" data-i18n="nav_tutor">AI Tutor</a></li>
           </ul>
         </div>
 
@@ -698,44 +597,246 @@
     </div>
   </footer>
 
+  </div> <!-- END mainLandingView -->
+
+  <!-- ==========================================
+       DEDICATED FULL-PAGE AI TUTOR WORKSPACE APP
+       ========================================== -->
+  <div id="aiTutorAppPage" class="ai-tutor-app-page" style="display:none;">
+    <!-- Dedicated App Top Navbar -->
+    <header class="tutor-app-navbar">
+      <div class="nav-brand" style="cursor:pointer;" onclick="showLandingPage()">
+        <div class="brand-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>Learn<span class="brand-q-tag">AIQ</span></span>
+      </div>
+
+      <button class="btn-back-home" onclick="showLandingPage()">
+        ← <span data-i18n="btn_back_home">Back to Home</span>
+      </button>
+
+      <div class="nav-actions">
+        <!-- Language Selector -->
+        <div class="lang-selector" title="Select Language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <select id="languageSelectApp" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="te">తెలుగు (Telugu)</option>
+          </select>
+        </div>
+
+        <div id="userProfileBadgeApp"></div>
+      </div>
+    </header>
+
+    <!-- Main Full-Page AI Tutor Workspace Area -->
+    <main class="tutor-app-main">
+      <div class="tutor-student-banner" id="tutorStudentBanner">
+        <div class="tutor-banner-info">
+          <span class="online-indicator">🟢</span>
+          <strong id="tutorStudentNameGreeting">Welcome! Your Personal AI Tutor is Ready</strong>
+        </div>
+        <div class="tutor-banner-badge" id="tutorClassBadge">Class 1 • Maths & Science</div>
+      </div>
+
+      <!-- Lesson Progress & Active Control Toolbar -->
+      <div class="tutor-progress-toolbar">
+        <div class="progress-bar-block">
+          <div class="progress-label-row">
+            <span class="progress-title">📊 Subject Progress: <strong id="progressPercentText">0% Completed</strong></span>
+            <span class="progress-count" id="progressCountText">0/4 Chapters</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="tutor-action-toolbar">
+          <button class="btn btn-secondary btn-sm btn-restart-lesson" onclick="restartCurrentLesson()" title="Start this lesson fresh from Step 1 while saving past history">
+            🔄 <span data-i18n="btn_restart_lesson">Start Lesson Fresh</span>
+          </button>
+          <button class="btn btn-amber btn-sm btn-complete-lesson" id="btnCompleteLesson" onclick="markLessonCompleted()">
+            ✅ <span data-i18n="btn_complete_lesson">Mark Lesson Completed</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="tutor-section-wrapper full-web-wrapper">
+        <div class="tutor-control-panel">
+          <div class="tutor-profile">
+            <div class="tutor-avatar-big">🤖</div>
+            <div class="tutor-info-box">
+              <h3>LearnAIQ Buddy</h3>
+              <p data-i18n="tutor_active_status">🟢 Active &amp; Ready</p>
+            </div>
+          </div>
+
+          <div class="panel-block">
+            <h5 data-i18n="quick_prompts_heading">4-Step Learning Roadmap</h5>
+            <div class="quick-action-buttons">
+              <button class="quick-btn" onclick="sendQuickPrompt('Step 1: Concept Analogy')">
+                <span>🎯 Step 1: Concept Analogy</span>
+              </button>
+              <button class="quick-btn" onclick="sendQuickPrompt('Step 2: Step-by-Step Explanation')">
+                <span>💡 Step 2: Explanation</span>
+              </button>
+              <button class="quick-btn" onclick="sendQuickPrompt('Step 3: Real-Life Example')">
+                <span>🌟 Step 3: Real-Life Example</span>
+              </button>
+              <button class="quick-btn" onclick="sendQuickPrompt('Step 4: Practice Quiz')">
+                <span>🧠 Step 4: Practice Quiz</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="tutor-features-toggle">
+            <div class="toggle-item">
+              <span data-i18n="read_aloud_toggle">Read Aloud (Voice)</span>
+              <label class="switch">
+                <input type="checkbox" id="voiceToggle" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="toggle-item">
+              <span data-i18n="encouraging_toggle">Encouraging Tone</span>
+              <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
+            </div>
+            <div class="toggle-item">
+              <span data-i18n="guardian_toggle">Safety Guardian</span>
+              <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="tutor-chat-area full-web-chat">
+          <div class="chat-header-bar">
+            <div><strong id="chatSubjectHeading">Class 3 — Fractions (Maths)</strong></div>
+            <div class="active-context-badge" data-i18n="adaptive_pace_badge">✨ Adaptive Pace: Balanced</div>
+          </div>
+
+          <div class="chat-messages-container" id="chatMessages">
+            <div class="msg-row ai-msg">
+              <div class="msg-avatar">🤖</div>
+              <div>
+                <div class="msg-bubble-content" data-i18n="tutor_welcome_msg">
+                  Hi there! 👋 I'm your LearnAIQ Tutor. What would you like to explore today? You can ask me anything about <strong>Fractions</strong> or pick a quick question below!
+                </div>
+                <button class="chat-audio-btn" onclick="speakCurrentMsg(this)">🔊 Listen</button>
+              </div>
+            </div>
+
+            <div class="msg-row user-msg">
+              <div class="msg-avatar">👦</div>
+              <div class="msg-bubble-content" data-i18n="hero_user_msg">"What is a fraction?"</div>
+            </div>
+
+            <div class="msg-row ai-msg">
+              <div class="msg-avatar">🤖</div>
+              <div>
+                <div class="msg-bubble-content" data-i18n="hero_ai_msg">
+                  A <strong>fraction</strong> shows a part of a whole. For example, if a pizza is divided into 4 equal pieces and you take 1 piece, you have <strong>1/4</strong> of the pizza! 🍕
+                </div>
+                <button class="chat-audio-btn" onclick="speakCurrentMsg(this)">🔊 Listen</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-input-bar">
+            <button class="btn btn-icon mic-btn" title="Voice Input (Speech-to-Text)" onclick="triggerVoiceInput()">🎤</button>
+            <input type="text" id="chatInputField" class="chat-input-field" placeholder="Ask your AI tutor anything..." onkeypress="handleKeyPress(event)">
+            <button class="btn btn-primary btn-sm" onclick="sendCustomMessage()" data-i18n="btn_send">Send</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
   <!-- ==========================================
        MODAL 1: STUDENT LOGIN / SIGNUP MODAL
        ========================================== -->
   <div class="modal-overlay" id="loginModal">
     <div class="modal-content-box">
       <button class="modal-close-btn" onclick="closeLoginModal()">&times;</button>
-      <h3 class="modal-title" data-i18n="modal_login_title">Student Registration</h3>
-      <p class="modal-subtitle" data-i18n="modal_login_subtitle">Start your 7-Day FREE Trial on LearnAIQ instantly!</p>
+      
+      <!-- Tab Header for Log In vs Sign Up -->
+      <div class="auth-modal-tabs">
+        <button id="tabBtnLogin" class="auth-tab-btn active" onclick="switchAuthTab('login')">
+          🔑 <span data-i18n="tab_login">Student Log In</span>
+        </button>
+        <button id="tabBtnSignup" class="auth-tab-btn" onclick="switchAuthTab('signup')">
+          ✨ <span data-i18n="tab_signup">Sign Up (Free Trial)</span>
+        </button>
+      </div>
 
-      <form id="loginForm" onsubmit="handleLoginSubmit(event)">
-        <div class="form-group">
-          <label data-i18n="lbl_name">Full Name</label>
-          <input type="text" id="regName" class="form-control" placeholder="e.g. Aarav Sharma" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="lbl_username">Username</label>
-          <input type="text" id="regUsername" class="form-control" placeholder="e.g. aarav123" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="lbl_phone">Phone Number</label>
-          <input type="tel" id="regPhone" class="form-control" placeholder="e.g. 9876543210" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="lbl_password">Password</label>
-          <input type="password" id="regPassword" class="form-control" placeholder="••••••••" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="lbl_select_class">Select Class</label>
-          <select id="regClassSelect" class="form-control">
-            <option value="1">Class 1 ($10/mo after trial)</option>
-            <option value="2">Class 2 ($15/mo after trial)</option>
-            <option value="3">Class 3 ($20/mo after trial)</option>
-            <option value="4">Class 4 ($25/mo - Pre-register)</option>
-            <option value="5">Class 5 ($30/mo - Pre-register)</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.5rem;" data-i18n="btn_start_trial_submit">Start 7-Day Free Trial Now</button>
-      </form>
+      <!-- LOG IN FORM (Existing Users: 3 Details - Username, Mobile Number, Password) -->
+      <div id="authLoginSection" class="auth-section">
+        <h3 class="modal-title" data-i18n="modal_login_head">Welcome Back!</h3>
+        <p class="modal-subtitle" data-i18n="modal_login_subhead">Enter your 3 details to access your account.</p>
+
+        <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+          <div class="form-group">
+            <label data-i18n="lbl_username">Username</label>
+            <input type="text" id="loginUsername" class="form-control" placeholder="e.g. aarav123" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_phone">Mobile Number</label>
+            <input type="tel" id="loginPhone" class="form-control" placeholder="e.g. 9876543210" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_password">Password</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required>
+              <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('loginPassword', this)" title="Show Password" aria-label="Toggle Password Visibility">
+                <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.5rem;" data-i18n="btn_login_submit">Log In to LearnAIQ</button>
+        </form>
+      </div>
+
+      <!-- SIGN UP FORM (New Users: 5 Details - Full Name, Username, Phone, Password, Class) -->
+      <div id="authSignupSection" class="auth-section" style="display:none;">
+        <h3 class="modal-title" data-i18n="modal_signup_head">Create New Student Account</h3>
+        <p class="modal-subtitle" data-i18n="modal_signup_subhead">Start your 7-Day FREE Trial on LearnAIQ instantly!</p>
+
+        <form id="signupForm" onsubmit="handleSignupSubmit(event)">
+          <div class="form-group">
+            <label data-i18n="lbl_name">Full Name</label>
+            <input type="text" id="regName" class="form-control" placeholder="e.g. Aarav Sharma" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_username">Username</label>
+            <input type="text" id="regUsername" class="form-control" placeholder="e.g. aarav123" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_phone">Mobile Number</label>
+            <input type="tel" id="regPhone" class="form-control" placeholder="e.g. 9876543210" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_password">Password</label>
+            <div class="password-input-wrapper">
+              <input type="password" id="regPassword" class="form-control" placeholder="••••••••" required>
+              <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('regPassword', this)" title="Show Password" aria-label="Toggle Password Visibility">
+                <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label data-i18n="lbl_select_class">Select Class</label>
+            <select id="regClassSelect" class="form-control">
+              <option value="1">Class 1 ($10/mo after trial)</option>
+              <option value="2">Class 2 ($15/mo after trial)</option>
+              <option value="3">Class 3 ($20/mo after trial)</option>
+              <option value="4">Class 4 ($25/mo - Pre-register)</option>
+              <option value="5">Class 5 ($30/mo - Pre-register)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-amber" style="width:100%; margin-top:0.5rem;" data-i18n="btn_start_trial_submit">Start 7-Day Free Trial Now</button>
+        </form>
+      </div>
+
     </div>
   </div>
 

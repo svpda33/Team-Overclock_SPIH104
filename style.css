@@ -88,6 +88,7 @@ button { font-family: var(--font-body); cursor: pointer; border: none; outline: 
 
 .container { width: 90%; max-width: 1240px; margin: 0 auto; padding: 0 1rem; }
 .section-spacer { padding: 5rem 0; }
+section[id] { scroll-margin-top: 80px; }
 
 .section-header { text-align: center; max-width: 720px; margin: 0 auto 3.5rem auto; }
 .section-tag {
@@ -455,12 +456,37 @@ input:checked + .slider:before { transform: translateX(20px); }
 .ai-msg .msg-avatar { background: var(--primary-gradient); color: #FFFFFF; }
 
 .msg-bubble-content { padding: 1.1rem 1.3rem; border-radius: 20px; font-size: 0.95rem; line-height: 1.6; }
-.user-msg .msg-bubble-content { background: var(--primary); color: #FFFFFF; border-bottom-right-radius: 4px; }
-.ai-msg .msg-bubble-content { background: #F8FAFC; border: 1px solid var(--border-light); color: var(--text-main); border-bottom-left-radius: 4px; box-shadow: var(--shadow-sm); }
+.user-msg .msg-bubble-content { background: var(--primary-gradient); color: #FFFFFF; border-bottom-right-radius: 4px; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25); }
+.ai-msg .msg-bubble-content { background: #FFFFFF; border: 1.5px solid #E2E8F0; border-left: 4px solid var(--primary); color: #0F172A; border-bottom-left-radius: 4px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06); font-weight: 500; }
+.ai-msg .msg-bubble-content strong,
+.ai-msg .msg-bubble-content b { color: #4F46E5; font-weight: 800; }
 
-.chat-audio-btn { margin-top: 0.6rem; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.75rem; background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--radius-full); font-size: 0.775rem; font-weight: 700; color: var(--secondary); cursor: pointer; transition: var(--transition); }
+.chat-audio-btn { margin-top: 0.6rem; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.85rem; background: #EEF2FF; border: 1.5px solid #C7D2FE; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; color: #4F46E5; cursor: pointer; transition: var(--transition); }
+.chat-audio-btn:hover { background: #4F46E5; color: #FFFFFF; border-color: #4F46E5; }
+
 .chat-input-bar { padding: 1.25rem 1.75rem; border-top: 1px solid var(--border-light); background: #FAFAFA; display: flex; align-items: center; gap: 0.75rem; }
-.chat-input-field { flex-grow: 1; padding: 0.85rem 1.25rem; background: #FFFFFF; border: 1.5px solid var(--border-light); border-radius: var(--radius-full); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: var(--transition); }
+.chat-input-field { flex-grow: 1; padding: 0.85rem 1.25rem; background: #FFFFFF; border: 1.5px solid var(--border-light); border-radius: var(--radius-full); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: var(--transition); color: #0F172A; }
+.chat-input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15); }
+
+/* Dedicated Full-Page AI Tutor App View Styling */
+.ai-tutor-app-page { display: none; min-height: 100vh; background: #F8FAFC; padding-bottom: 3rem; }
+.ai-tutor-app-page.active { display: block; animation: modalFadeIn 0.3s ease; }
+.tutor-app-navbar { background: #FFFFFF; border-bottom: 1px solid var(--border-light); padding: 0.9rem 2rem; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; }
+.btn-back-home { display: inline-flex; align-items: center; gap: 0.5rem; background: #F1F5F9; color: var(--text-main); font-size: 0.875rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: var(--radius-sm); border: none; cursor: pointer; transition: var(--transition); }
+.btn-back-home:hover { background: #E2E8F0; color: var(--primary); }
+.tutor-app-main { max-width: 1300px; margin: 1.5rem auto 0 auto; padding: 0 1.5rem; }
+
+/* Student Progress & Action Control Toolbar */
+.tutor-progress-toolbar { background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: var(--radius-md); padding: 1.1rem 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; box-shadow: var(--shadow-sm); flex-wrap: wrap; }
+.progress-bar-block { flex-grow: 1; max-width: 600px; }
+.progress-label-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; font-weight: 700; color: #1E293B; margin-bottom: 0.4rem; }
+.progress-track { height: 10px; background: #E2E8F0; border-radius: 999px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #10B981, #059669); border-radius: 999px; transition: width 0.4s ease; }
+.tutor-action-toolbar { display: flex; align-items: center; gap: 0.75rem; }
+.btn-restart-lesson { background: #F1F5F9; color: #334155; border: 1px solid #CBD5E1; font-weight: 700; transition: var(--transition); }
+.btn-restart-lesson:hover { background: #E2E8F0; color: #0F172A; }
+.btn-complete-lesson { background: linear-gradient(135deg, #10B981, #059669); color: #FFFFFF; border: none; font-weight: 700; transition: var(--transition); }
+.btn-complete-lesson:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); }
 
 /* ==========================================================================
    7. PRICING SECTION
@@ -518,6 +544,52 @@ input:checked + .slider:before { transform: translateX(20px); }
 .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15); }
 
 @keyframes modalFadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+/* Auth Modal Tabs Styling */
+.auth-modal-tabs { display: flex; gap: 0.5rem; background: #F1F5F9; padding: 4px; border-radius: var(--radius-sm); margin-bottom: 1.25rem; }
+.auth-tab-btn { flex: 1; padding: 0.6rem 0.8rem; border: none; background: transparent; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; color: var(--text-muted); border-radius: calc(var(--radius-sm) - 2px); cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 0.4rem; }
+.auth-tab-btn.active { background: #FFFFFF; color: var(--primary); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+.auth-tab-btn:hover:not(.active) { color: var(--text-main); }
+
+/* Logged-In User Profile Badge in Header */
+.user-profile-badge { position: relative; display: inline-flex; align-items: center; }
+.user-badge-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary-light); color: var(--primary-dark); font-weight: 700; font-size: 0.875rem; padding: 0.5rem 1rem; border-radius: 9999px; border: 1.5px solid rgba(79, 70, 229, 0.2); cursor: pointer; transition: var(--transition); }
+.user-badge-btn:hover { background: #EEF2FF; border-color: var(--primary); }
+.user-dropdown-menu { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--radius-sm); box-shadow: var(--shadow-lg); width: 220px; z-index: 100; padding: 0.5rem 0; text-align: left; }
+.user-dropdown-menu.active { display: block; animation: modalFadeIn 0.2s ease; }
+.user-dropdown-header { padding: 0.75rem 1rem; border-bottom: 1px solid #F1F5F9; }
+.user-dropdown-name { font-weight: 700; font-size: 0.9rem; color: var(--text-main); }
+.user-dropdown-sub { font-size: 0.75rem; color: var(--text-muted); }
+.user-dropdown-item { width: 100%; text-align: left; padding: 0.6rem 1rem; border: none; background: transparent; font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; color: #EF4444; cursor: pointer; transition: background 0.15s ease; display: flex; align-items: center; gap: 0.5rem; }
+.user-dropdown-item:hover { background: #FEF2F2; }
+
+/* Password Input Wrapper with Eye Toggle Button */
+.password-input-wrapper { position: relative; display: flex; align-items: center; }
+.password-input-wrapper .form-control { padding-right: 2.75rem; }
+.password-toggle-btn { position: absolute; right: 10px; background: transparent; border: none; padding: 4px; cursor: pointer; border-radius: 4px; color: var(--text-muted); transition: color 0.15s ease, transform 0.15s ease; display: flex; align-items: center; justify-content: center; user-select: none; }
+.password-toggle-btn:hover { color: var(--primary); transform: scale(1.1); }
+.password-toggle-btn svg { display: block; stroke-width: 2.2px; }
+
+/* Guest Landing "How Students Learn" Cards */
+.tutor-guest-box { background: #FFFFFF; border: 1.5px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-md); text-align: center; }
+.tutor-guest-header { margin-bottom: 2rem; }
+.tutor-guest-header h3 { font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem; }
+.tutor-guest-header p { font-size: 0.95rem; color: var(--text-muted); }
+.tutor-guest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; text-align: left; }
+.how-learn-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: var(--radius-md); padding: 1.5rem; transition: var(--transition); }
+.how-learn-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+.how-learn-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+.how-learn-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; }
+.how-learn-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
+.tutor-guest-cta { text-align: center; margin-top: 1.5rem; }
+
+/* Full Web Active AI Tutor Workspace */
+.tutor-active-box { animation: modalFadeIn 0.3s ease; }
+.tutor-student-banner { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: #FFFFFF; padding: 1rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); }
+.tutor-banner-info { display: flex; align-items: center; gap: 0.75rem; font-size: 1rem; font-weight: 700; }
+.tutor-banner-badge { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(4px); padding: 0.4rem 0.9rem; border-radius: 9999px; font-size: 0.85rem; font-weight: 600; }
+.full-web-wrapper { grid-template-columns: 300px 1fr; }
+.full-web-chat { min-height: 520px; }
 
 /* ==========================================================================
    10. FOOTER
