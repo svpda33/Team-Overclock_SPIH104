@@ -17,3 +17,6 @@ learnaiq.db-wal
 learnaiq.db-shm
 .DS_Store
 Thumbs.db
+learnaiq.db
+learnaiq.db-shm
+learnaiq.db-wal
