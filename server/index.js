@@ -73,7 +73,7 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     message: 'LearnAIQ Express Gemini LLM Backend operational',
-    environment: process.env.VERCEL ? 'Vercel Serverless' : 'Local Node.js'
+    environment: process.env.RAILWAY_ENVIRONMENT ? 'Railway Container' : (process.env.VERCEL ? 'Vercel Serverless' : 'Local Node.js')
   });
 });
 
@@ -82,14 +82,14 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
-// Start Server for Local Execution
+// Start Server for Local & Container Execution (Railway & Local Node.js)
 async function startServer() {
   try {
     await ensureDbReady();
     if (!process.env.VERCEL) {
-      app.listen(PORT, () => {
+      app.listen(PORT, '0.0.0.0', () => {
         console.log(`====================================================`);
-        console.log(`🚀 LearnAIQ Backend Server listening on http://localhost:${PORT}`);
+        console.log(`🚀 LearnAIQ Backend Server listening on port ${PORT}`);
         console.log(`📊 SQLite WAL Mode Enabled (Capacity: 1k users, 50k DB records)`);
         console.log(`====================================================`);
       });
